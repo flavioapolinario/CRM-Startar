@@ -1,0 +1,21 @@
+<p>
+  <b>Projeto:</b>
+  <%=h @document.project.name %>
+</p>
+<p>
+  <b>Title:</b>
+  <%=h @document.title %>
+</p>
+<p>
+  <b>Description:</b>
+  <%=h @document.description %>
+</p>
+
+<p>  
+  <%= link_to "Download this document", @document.document.url if @document.document.file? %>
+  <%= link_to image_tag(@document.document.url(:thumb)), @document.document.url if @document.document.file? %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_document_path(@project,@document) %> |
+<%= link_to 'Back', project_documents_path(@project) %>

@@ -1,0 +1,30 @@
+
+development:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: crm_development
+  pool: 5
+  username: root
+  password: 1234
+  host: localhost
+
+test:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: crm_test
+  pool: 5
+  username: root
+  password: 1234
+  host: localhost
+
+production:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: crm_production
+  pool: 5
+  username: root
+  password: 1234
+  host: localhost
