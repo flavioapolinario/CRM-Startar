@@ -4,7 +4,8 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
-    @tasks = Task.all
+    @tasks = Task.paginate :page => params[:page], :order => 'title ASC', :per_page => 4
+    #@tasks = Task.all
     
     respond_to do |format|
       format.html # index.html.erb
@@ -47,7 +48,7 @@ class TasksController < ApplicationController
     
     respond_to do |format|
       if @task.save
-        format.html { redirect_to(@task, :notice => 'Task was successfully created.') }
+        format.html { redirect_to(@task, :notice => t("SucessfullyCreated")) }
         format.xml  { render :xml => @task, :status => :created, :location => @task }
       else
         format.html { render :action => "new" }
@@ -64,7 +65,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update_attributes(params[:task])
         notify_users
-        format.html { redirect_to(@task, :notice => 'Task was successfully updated.') }
+        format.html { redirect_to(@task, :notice => t("SucessfullyUpdated"))  }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

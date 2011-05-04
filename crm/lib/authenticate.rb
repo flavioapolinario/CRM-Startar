@@ -19,7 +19,7 @@ module Authenticate
       respond_to do |format|
         format.html do
           store_location
-          flash[:notice] = "You must be logged in to access this page"
+          flash[:notice] = t("MustLogged")
           redirect_to new_user_session_url
         end
         format.any(:xml, :json, :rss) do
@@ -31,7 +31,7 @@ module Authenticate
       end
     end
   end
-  
+ 
   def redirect_back_or_default(default)
     logger.info { session[:return_to] }
     redirect_to(session[:return_to] || default)

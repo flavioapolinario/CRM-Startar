@@ -3,12 +3,17 @@ class User < ActiveRecord::Base
 
   KIND = %w(administrator user)
 
+  #associações
   has_many :contracts
   has_many :tasks, :foreign_key => "owner_id"
 
+  #validações
   validates_presence_of :name, :email
   validates_inclusion_of :kind, :in => KIND
 
+  #namescope
+  named_scope :open, :conditions => { :status => "open" }
+  
   # Versao antiga
   #  acts_as_authentic
   #

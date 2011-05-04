@@ -16,7 +16,7 @@
     <%= f.select :customer_id, @customers, :prompt => "Select.." %>
   </p>
   <p>
-    <b>Members</b><br />
+    <b><%= t("Members") %></b><br />
     <% @users.each do |user| %>
       <%= check_box_tag  "project[member_ids][]" , user.id,
         @project.members.include?(user) %>

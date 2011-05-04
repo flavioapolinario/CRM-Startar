@@ -1,14 +1,30 @@
 pt-BR:
+  # Menu
+  MyTasks: "Minhas Tarefas"
+  Customers: "Clientes"
+  Projects: "Projetos"
+  Tasks: "Tarefas"
+  Contracts: "Contratos"
+  Users: "Usuarios"
+  EditProfile: "Editar Perfil"
+  Logout: "Logout"
+  Register: "Registrar"
+  Login: "Login"
+  
+  # Custom Messages
+  Confirm: "Tem certeza?"
+  DownloadMessage: "Download deste documento"
+  MustLogged: "É necessario realizar login para acessar."
+  SucessfullyLoggedIn: "Login Realizado com sucesso."
+  SucessfullyLoggedOut: "Logout Realizado com sucesso."
+  SucessfullyCreated: "Registro criado com sucesso"
+  SucessfullyUpdated: "Registro alterado com sucesso"
+  
+  # Ações
   back: "Voltar"
   show: "Exibir"
-  
-  customers:
-    new:
-      title: "Criando cliente"
-      button: "Criar"
-    edit:
-      title: "Editando cliente"
-      button: "Alterar"      
+  edit: "Editar"
+  destroy: "Excluir" 
   
   # formatos de data e hora
   date:
@@ -150,21 +166,6 @@ pt-BR:
         less_than: "deve ser menor do que %{count}"
         less_than_or_equal_to: "deve ser menor ou igual a %{count}"
         odd: "deve ser ímpar"
-        even: "deve ser par"
+        even: "deve ser par"           
 
-    models:
-      customer: 
-        one: "cliente"
-        other: "clientes"        
-
-    attributes:
-      customer:
-        name: "nome"
-        description: "descrição"
-        rating: "avaliação"
-        created_at: "criado em"
-        updated_at: "atualizado em"
-        phone: "telefone"
-        phone_country_code: "código de país"
-        phone_area_code: "código de área"
-        phone_number: "número de telefone"
+    

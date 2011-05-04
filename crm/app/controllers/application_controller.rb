@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password
   helper_method :current_user
 
+  protected
+  def resources_for_select(resource)
+    resource.all.collect {|c| [c.name,c.id]}
+  end
+  
 end

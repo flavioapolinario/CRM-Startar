@@ -1,0 +1,23 @@
+pt-BR:
+  Title: "Titulo"
+  Description: "Descrição"
+  Status: "Status"
+  Owner: "Membro"
+  Priority: "Prioridade"
+  Progress: "Progresso"
+  Started at: "Inicio"
+  Ended at: "Fim"
+  Project: "Projeto"
+
+  tasks:
+    new:
+      title: "Criando Tarefa"
+      button: "Criar"
+    edit:
+      title: "Editando Tarefa"
+      button: "Alterar"
+    index:
+      new: "Nova tarefa"
+      title: "Lista de Tarefas"
+    urgent:
+      title: "Tarefas urgentes"

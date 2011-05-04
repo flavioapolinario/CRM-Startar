@@ -1,6 +1,11 @@
 <% div_for project, :class => "group" do %>
-  <h2><%= project.name %></h2>
+  <h2><%= project.name %> </h2>
   <ul id="project_tasks_<%= project.id %>">
     <%= render :partial=>"task", :collection =>tasks, :as =>:task %>
+  </ul>
+  <ul>
+    <li id="total_tarefas_<%= project.id %>">
+      <b>Total: </b><%=  tasks.size %>
+    </li>
   </ul>
 <% end %>

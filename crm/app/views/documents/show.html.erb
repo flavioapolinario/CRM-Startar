@@ -1,21 +1,22 @@
 <p>
-  <b>Projeto:</b>
+  <b><%=t "Project"%></b>
   <%=h @document.project.name %>
 </p>
 <p>
-  <b>Title:</b>
+  <b><%=t "Title"%></b>
   <%=h @document.title %>
 </p>
 <p>
-  <b>Description:</b>
+  <b><%=t "Description" %></b>
   <%=h @document.description %>
 </p>
 
 <p>  
-  <%= link_to "Download this document", @document.document.url if @document.document.file? %>
+  <%= link_to t("DownloadMessage"), @document.document.url if @document.document.file? %>
+  <br/>
   <%= link_to image_tag(@document.document.url(:thumb)), @document.document.url if @document.document.file? %>
 </p>
 
 
-<%= link_to 'Edit', edit_project_document_path(@project,@document) %> |
-<%= link_to 'Back', project_documents_path(@project) %>
+<%= link_to t("edit"), edit_project_document_path(@project,@document) %> |
+<%= link_to t("back"), project_documents_path(@project) %>

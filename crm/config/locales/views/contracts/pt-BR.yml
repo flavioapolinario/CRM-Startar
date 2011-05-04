@@ -1,0 +1,21 @@
+pt-BR:
+  Name: "Nome"
+  Code: "Código"
+  Description: "Descrição"
+  Started_at: "Iniciado em"
+  Ended_at: "Finalizado em"
+  Value: "Valor"
+  Leader: "Líder"
+  Project: "Projeto"
+
+  contracts:
+    new:
+      title: "Criando Contrato"
+      button: "Criar"
+    edit:
+      title: "Editando Contrato"
+      button: "Alterar"
+    index:
+      new: "Novo Contrato"
+      title: "Lista de Contratos"
+      

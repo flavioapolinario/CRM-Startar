@@ -14,6 +14,8 @@ class HomeController < ApplicationController
     @task = current_user.tasks.find(params[:id].gsub(/\D/, ""))
     #@task = current_user.tasks.find(params[:id])
     @task.update_attribute("status", "closed")
+    @task.update_attribute("ended_at", Date.current)
+    
   end
 
   def save

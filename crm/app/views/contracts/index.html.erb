@@ -1,36 +1,38 @@
-<h1>Listing contracts</h1>
+<h1><%=t ".title"%></h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Code</th>
-    <th>Description</th>
-    <th>Status</th>
-    <th>Started at</th>
-    <th>Ended at</th>
-    <th>Value</th>
-    <th>Leader</th>
-    <th>Project</th>
+    <th><%=t "Name"%></th>
+    <th><%=t "Code"%></th>
+    <th><%=t "Description"%></th>
+    <th><%=t "Status"%></th>
+    <th><%=t "Started_at"%></th>
+    <th><%=t "Ended_at"%></th>
+    <th><%=t "Value"%></th>
+    <th><%=t "Leader"%></th>
+    <th><%=t "Project"%></th>
+
   </tr>
 
-<% @contracts.each do |contract| %>
-  <tr>
-    <td><%=h contract.name %></td>
-    <td><%=h contract.code %></td>
-    <td><%=h contract.description %></td>
-    <td><%=h contract.status %></td>
-    <td><%=h contract.started_at %></td>
-    <td><%=h contract.ended_at %></td>
-    <td><%=h contract.value %></td>
-    <td><%=h contract.leader.name %></td>
-    <td><%=h contract.project.name %></td>
-    <td><%= link_to 'Show', contract %></td>
-    <td><%= link_to 'Edit', edit_contract_path(contract) %></td>
-    <td><%= link_to 'Destroy', contract, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% @contracts.each do |contract| %>
+    <tr>
+      <td><%=h contract.name %></td>
+      <td><%=h contract.code %></td>
+      <td><%=h contract.description %></td>
+      <td><%=h contract.status %></td>
+      <td><%=h contract.started_at %></td>
+      <td><%=h contract.ended_at %></td>
+      <td><%=h contract.value %></td>
+      <td><%=h contract.leader.name %></td>
+      <td><%=h contract.project.name %></td>
+      <td><%= link_to t("show"), contract %></td>
+      <td><%= link_to t("edit"), edit_contract_path(contract) %></td>
+      <td><%= link_to t("destroy"), contract, :confirm => t("Confirm"), :method => :delete %></td>
+    </tr>
+  <% end %>  
 </table>
 
+<%=  will_paginate @contracts %>
 <br />
-teste <br />
-<%= link_to 'New contract', new_contract_path %>
+
+<%= link_to t(".new"), new_contract_path %>

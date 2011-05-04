@@ -1,0 +1,16 @@
+pt-BR:
+  Name: "Nome"
+  Description: "Descrição"
+  Customer: "Cliente"
+  Documents: "Documentos"
+  Members: "Membros"
+  
+  home:    
+    edit:
+      title: "Criando tarefa"
+      button: "Criar"
+      
+    index:
+      title: "Lista de Projetos"
+      Completed_Tasks: "Tarefas completas"
+      button: "Criar"

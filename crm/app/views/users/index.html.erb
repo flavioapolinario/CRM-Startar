@@ -1,0 +1,26 @@
+
+<p><%= t "Name" %>: <b><%= current_user.name  %></b></p>
+<p><%= t "UserName" %>: <b><%=  current_user.username  %></b></p>
+<p><%= t "Created_At" %>: <b><%= current_user.created_at  %></b></p>
+
+<h3><%= t ".title" %></h3>
+<table>
+  <tr>
+    <th><%= t "Name" %></th>
+    <th><%= t "UserName" %></th>
+    <th><%= t "Created_At" %></th>
+    <th><%= t "Kind" %></th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%=h user.name %></td>
+      <td><%=h user.username %></td>
+      <td><%=h user.created_at %></td>
+      <td><%=h user.kind %></td>
+      <td><%= link_to t("edit"), edit_user_path(user) %></td>
+      <td><%= link_to t("destroy"), user, :confirm => t("Confirm"), :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+<%=  will_paginate @users %>

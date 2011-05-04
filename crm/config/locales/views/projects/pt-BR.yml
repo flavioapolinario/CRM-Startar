@@ -1,0 +1,17 @@
+pt-BR:
+  Name: "Nome"
+  Login: "Login"
+  Password: "Senha"
+  Kind: "Perfil"
+
+  projects:
+    new:
+      title: "Criando projeto"
+      button: "Criar"
+    edit:
+      title: "Editando projeto"
+      button: "Alterar"
+    index:
+      new: "Novo Projeto"
+      title: "Lista de Projetos"
+      

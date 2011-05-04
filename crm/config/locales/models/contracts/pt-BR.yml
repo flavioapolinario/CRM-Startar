@@ -1,0 +1,18 @@
+pt-BR:
+  activerecord:
+    models:
+      contract:
+        one: "contrato"
+        other: "contratos"
+
+    attributes:
+      contract:
+        name: "nome"
+        code: "codigo"
+        description: "descrição"        
+        started_at: "iniciado em"
+        ended_at: "finalizado em"
+        value: "valor"
+        leader_id: "líder"
+        project_id: "projeto"
+        

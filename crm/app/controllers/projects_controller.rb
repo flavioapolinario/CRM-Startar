@@ -4,8 +4,9 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.xml
   def index
-    @projects = Project.all(:include => [:customer], :order =>"customers.name")
-    
+    #@projects = Project.all(:include => [:customer], :order =>"customers.name")
+    @projects = Project.paginate :page => params[:page], :include => [:customer], :order =>"customers.name" , :per_page => 4
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @projects }
@@ -46,7 +47,7 @@ class ProjectsController < ApplicationController
     
     respond_to do |format|
       if @project.save
-        format.html { redirect_to(@project, :notice => 'Project was successfully created.') }
+        format.html { redirect_to(@project, :notice => t("SucessfullyCreated")) }
         format.xml  { render :xml => @project, :status => :created, :location => @project }
       else
         format.html { render :action => "new" }
@@ -62,7 +63,7 @@ class ProjectsController < ApplicationController
     
     respond_to do |format|
       if @project.update_attributes(params[:project])
-        format.html { redirect_to(@project, :notice => 'Project was successfully updated.') }
+        format.html { redirect_to(@project, :notice => t("SucessfullyUpdated")) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -84,7 +85,7 @@ class ProjectsController < ApplicationController
   end
   
   protected
- # Carrega os @customers e @users
+  # Carrega os @customers e @users
   def load_customers_and_users
     @customers = Customer.all.collect { |c| [c.name, c.id] }
     @users = User.find(:all, :order => "name")

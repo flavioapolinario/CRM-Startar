@@ -1,23 +1,23 @@
 <p>
-  <b>Name:</b>
+  <b><%=t "Name"%></b>
   <%=h @customer.name %>
 </p>
 <p>
-  <b>Description:</b>
+  <b><%=t "Description"%></b>
   <%=h @customer.description %>
 </p>
 <p>
-  <b>Phone:</b>
+  <b><%=t "Phone"%></b>
   <%=h @customer.phone %>
 </p>
 <p>
-  <b>Rating:</b>
+  <b><%=t "Rating"%></b>
   <%=h @customer.rating %>
 </p>
 
 <% unless @customer.projects.empty? %>
   <p>
-    <b>Projects:</b>
+    <b><%=t "Projects"%></b>
   <ul>
     <% @customer.projects.each do |project| %>
       <li>
@@ -30,7 +30,7 @@
 
 <% unless @customer.contracts.empty? %>
   <p>
-    <b>Contracts:</b>
+    <b><%=t "Contracts"%></b>
   <ul>
     <% @customer.contracts.each do |contract| %>
       <li><%=h contract.name %></li>

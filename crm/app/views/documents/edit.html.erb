@@ -1,6 +1,6 @@
-<h1>Editing document</h1>
+<h1><%=t ".title" %></h1>
 
-<%= render 'form', :button=>"Edit" %>
+<%= render 'form', :button => t(".button") %>
 
-<%= link_to 'Show', project_document_path(@project, @document) %> |
-<%= link_to 'Back', project_documents_path(@project) %>
+<%= link_to  t("show"), project_document_path(@project, @document) %> |
+<%= link_to  t("back"), project_documents_path(@project) %>

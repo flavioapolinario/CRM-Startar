@@ -16,7 +16,7 @@ class Task < ActiveRecord::Base
   after_create :register_create
   after_update :register_update
 
-  #namescope
+  #namescope  
   named_scope :open, :conditions => { :status => "open" }
   named_scope :closed, :conditions => { :status => "closed"}
   named_scope :high, :conditions => { :priority => "high" }

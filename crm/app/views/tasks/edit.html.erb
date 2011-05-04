@@ -1,6 +1,6 @@
-<h1>Editing task</h1>
+<h1><%=t ".title" %></h1>
 
-<%= render "form", :button=>"Update" %>
+<%= render "form", :button=>t(".button") %>
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to t("show"), @task %> |
+<%= link_to t("back"), tasks_path %>

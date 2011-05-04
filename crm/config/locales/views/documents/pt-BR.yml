@@ -1,0 +1,18 @@
+pt-BR:
+  Title: "Titulo"
+  Description: "Descrição"
+  Size: "Tamanho"
+  Type: "Tipo" 
+  
+  documents:
+    new:
+      title: "Criando documento"
+      button: "Criar"
+    edit:
+      title: "Editando documento"
+      button: "Alterar"
+    index:
+      new: "Novo Documento"
+      title: "Lista de Documentos do projeto"
+    show:
+      Project: "Projeto"

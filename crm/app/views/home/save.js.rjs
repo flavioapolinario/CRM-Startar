@@ -1,11 +1,15 @@
 if @task.valid?
+  #obtem a lista de tarefas por usuario/projeto
+  tasks_list = current_user.tasks.all(:conditions => {:status =>"open", :project_id => @task.project_id})
+
   # Já existe uma div, então adiciona no topo a task recém-criada.
   page << "if ($('project_tasks_#{@task.project.id}') != null) {"
   page.insert_html :top, "project_tasks_#{@task.project.id}", :partial =>"task", :locals=>{:task=>@task}
+  page.replace_html "total_tarefas_#{@task.project.id}", "<b>Total: </b>#{ tasks_list.size }"
 
   # Se não houver uma div para o projeto, cria uma e já joga a lista de tasks
   page << "} else {"
-  tasks_list = current_user.tasks.all(:conditions => {:status =>"open", :project_id => @task.project_id})
+  #tasks_list = current_user.tasks.all(:conditions => {:status =>"open", :project_id => @task.project_id})
   page.insert_html :top, "projects", :partial => "project",
     :locals => { :project => @task.project, :tasks => tasks_list }
   page << "}"
@@ -18,7 +22,6 @@ end
 
 # Exibe o erro (ou zera) o edit
 page.replace "edit_form", :partial => "edit"
-
 
 #if @task.valid?
 #  page.insert_html :top, "project_tasks_#{@task.project.id}",

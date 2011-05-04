@@ -4,7 +4,7 @@
       :onclick => remote_function(:url => { :action => "finish", :id =>task },
       :before => %(Element.show("loader")), :complete => %(Element.hide("loader"))) %>
   <% end %>
-  <%= task.title %>
+  <%= task.title %> 
 </li>
 
 <% if task.status == "open" %>

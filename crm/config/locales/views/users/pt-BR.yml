@@ -1,0 +1,17 @@
+pt-BR:
+  Name: "Nome"
+  UserName: "Login"
+  Password: "Senha"
+  Kind: "Tipo"
+  Created_At: "Data criação"
+  
+  users:
+    new:
+      title: "Criando Usuário"
+      button: "Criar"
+    edit:
+      title: "Editando usuário"
+      button: "Alterar"
+    index:
+      new: "Novo usuário"
+      title: "Lista de Usuários"

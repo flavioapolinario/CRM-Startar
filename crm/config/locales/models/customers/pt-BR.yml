@@ -1,0 +1,18 @@
+pt-BR:
+  activerecord:
+    models:
+      customer:
+        one: "cliente"
+        other: "clientes"
+
+    attributes:
+      customer:
+        name: "nome"
+        description: "descrição"
+        rating: "avaliação"
+        created_at: "criado em"
+        updated_at: "atualizado em"
+        phone: "telefone"
+        phone_country_code: "código de país"
+        phone_area_code: "código de área"
+        phone_number: "número de telefone"

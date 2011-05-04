@@ -1,11 +1,11 @@
-<h1>Listing projects</h1>
+<h1><%=t ".title" %></h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Customer</th>
-    <th>Documents</th>
+    <th><%=t "Name"%></th>
+    <th><%=t "Description" %></th>
+    <th><%=t "Customer" %></th>
+    <th><%=t "Documents" %></th>
   </tr>
 
   <% @projects.each do |project| %>
@@ -13,14 +13,14 @@
       <td><%=h project.name %></td>
       <td><%=h project.description %></td>
       <td><%=h project.customer.name %></td>
-      <td><%= link_to "Documents", project_documents_path(project) %></td>
-      <td><%= link_to 'Show', project %></td>
-      <td><%= link_to 'Edit', edit_project_path(project) %></td>
-      <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to t("Documents"), project_documents_path(project) %></td>
+      <td><%= link_to t("show"), project %></td>
+      <td><%= link_to t("edit"), edit_project_path(project) %></td>
+      <td><%= link_to t("destroy"), project, :confirm => t("Confirm"), :method => :delete %></td>
     </tr>
   <% end %>
 </table>
-
+<%=  will_paginate @projects %>
 <br />
 
-<%= link_to 'New project', new_project_path %>
+<%= link_to t(".new"), new_project_path %>

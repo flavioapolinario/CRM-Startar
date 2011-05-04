@@ -1,0 +1,18 @@
+pt-BR:
+  Name: "Nome"
+  Description: "Descrição"  
+  Phone: "Telefone"
+  Rating: "Avaliação"
+  
+
+  customers:
+    new:
+      title: "Criando cliente"
+      button: "Criar"
+    edit:
+      title: "Editando cliente"
+      button: "Alterar"
+    index:
+      new: "Novo Cliente"
+      title: "Lista de Clientes"
+      

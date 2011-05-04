@@ -4,7 +4,8 @@ class ContractsController < ApplicationController
   # GET /contracts
   # GET /contracts.xml
   def index
-    @contracts = Contract.all
+    #@contracts = Contract.all
+    @contracts = Contract.paginate :page => params[:page], :order => 'name ASC', :per_page => 4
     
     respond_to do |format|
       format.html # index.html.erb
@@ -46,7 +47,7 @@ class ContractsController < ApplicationController
     
     respond_to do |format|
       if @contract.save
-        format.html { redirect_to(@contract, :notice => 'Contract was successfully created.') }
+        format.html { redirect_to(@contract, :notice => t("SucessfullyCreated")) }
         format.xml  { render :xml => @contract, :status => :created, :location => @contract }
       else
         format.html { render :action => "new" }
@@ -62,7 +63,7 @@ class ContractsController < ApplicationController
     
     respond_to do |format|
       if @contract.update_attributes(params[:contract])
-        format.html { redirect_to(@contract, :notice => 'Contract was successfully updated.') }
+        format.html { redirect_to(@contract, :notice =>  t("SucessfullyUpdated")) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

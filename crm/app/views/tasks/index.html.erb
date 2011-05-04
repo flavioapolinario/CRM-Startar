@@ -1,36 +1,36 @@
-<h1>Listing tasks</h1>
+<h1><%=t ".title" %></h1>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Status</th>
-    <th>Owner</th>
-    <th>Priority</th>
-    <th>Progress</th>
-    <th>Started at</th>
-    <th>Ended at</th>
-    <th>Project</th>
+    <th><%=t "Title"%></th>
+    <th><%=t "Description"%></th>
+    <th><%=t "Status"%></th>
+    <th><%=t "Owner"%></th>
+    <th><%=t "Priority"%></th>
+    <th><%=t "Progress"%></th>
+    <th><%=t "Started at"%></th>
+    <th><%=t "Ended at"%></th>
+    <th><%=t "Project"%></th>
   </tr>
 
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%=h task.title %></td>
-    <td><%=h task.description %></td>
-    <td><%=h task.status %></td>
-    <td><%=h task.owner.name %></td>
-    <td><%=h task.priority %></td>
-    <td><%=h task.progress %></td>
-    <td><%=h task.started_at %></td>
-    <td><%=h task.ended_at %></td>
-    <td><%=h task.project.name %></td>    
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%=h task.title %></td>
+      <td><%=h task.description %></td>
+      <td><%=h task.status %></td>
+      <td><%=h task.owner.name %></td>
+      <td><%=h task.priority %></td>
+      <td><%=h task.progress %></td>
+      <td><%=h task.started_at%></td>
+      <td><%=h task.ended_at %></td>
+      <td><%=h task.project.name %></td>
+      <td><%= link_to t("show"), task %></td>
+      <td><%= link_to t("edit"), edit_task_path(task) %></td>
+      <td><%= link_to t("destroy"), task, :confirm => t("Confirm"), :method => :delete %></td>
+    </tr>
+  <% end %>
 </table>
-
+<%=  will_paginate @tasks %>
 <br />
 
-<%= link_to 'New task', new_task_path %>
+<%= link_to t(".new"), new_task_path %>

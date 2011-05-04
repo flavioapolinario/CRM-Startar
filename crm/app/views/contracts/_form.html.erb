@@ -19,7 +19,7 @@
   <p>
     <%= f.label :status %>
     <br/>
-    <%= f.select :status, Contract::STATUS, :prompt => "Select.." %>
+    <%= f.select :status, Contract::STATUS , :prompt => "Select.." %>
   </p>
   <p>
     <%= f.label :started_at %>
@@ -48,6 +48,6 @@
     <%= f.select :project_id, @projects, :prompt => "Select.." %>
   </p>
   <p>
-    <%= f.submit 'Save' %>
+    <%= f.submit button %>
   </p>
 <% end %>

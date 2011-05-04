@@ -1,0 +1,17 @@
+pt-BR:
+  Name: "Nome"
+  Description: "Descrição"
+  Customer: "Cliente"
+  Documents: "Documentos"
+  Members: "Membros"
+
+  user_sessions:
+    new:
+      title: "Realizar Login"
+      button: "Criar"
+    edit:
+      title: "Editando usuário"
+      button: "Alterar"
+    index:
+      new: "Novo usuário"
+      title: "Lista de Usuários"

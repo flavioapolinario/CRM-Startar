@@ -1,21 +1,21 @@
 <p>
-  <b>Name:</b>
+  <b><%=t "Name"%></b>
   <%=h @project.name %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%=t "Description"%></b>
   <%=h @project.description %>
 </p>
 
 <p>
-  <b>Customer:</b>
+  <b><%=t "Customer"%></b>
   <%=h @project.customer.name %>
 </p>
 
 <% unless @project.members.empty? %>
   <p>
-    <b>Members:</b>
+    <b><%=t "Members"%></b>
   <ul>
     <% @project.members.each do |member| %>
       <li><%=h member.name %></li>
@@ -24,5 +24,5 @@
   </p>
 <% end %>
   
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to t("edit"), edit_project_path(@project) %> |
+<%= link_to t("back"), projects_path %>

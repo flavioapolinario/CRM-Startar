@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      user_session:
+        one: "usuário sessão"
+        other: "usuários sessões"
+
+    attributes:
+      user_session:
+        username: "login"
+        password: "senha"        
+        
