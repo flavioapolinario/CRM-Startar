@@ -1,3 +1,4 @@
+#teste flavio
 class ContractsController < ApplicationController
   before_filter :load_users,:load_projects, :only => [:new, :edit, :create, :update] 
   
